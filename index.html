@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aaron Sweemer</title>
+<meta name="description" content="Aaron Sweemer. VP of Cloud Services at Encore Technologies in Cincinnati. Builder, pre-sales leader, patent holder, Bengals fan.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aaron Sweemer">
+<meta property="og:description" content="Aaron Sweemer. VP of Cloud Services at Encore Technologies in Cincinnati. Builder, pre-sales leader, patent holder, Bengals fan.">
+<meta property="og:image" content="headshot.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 160'%3E%3Cpath fill='%23FB4F14' d='M0 10 L13 4 C30 50 40 100 36 156 C26 104 14 54 0 10 Z'/%3E%3Cpath fill='%23FB4F14' d='M28 4 L41 0 C58 46 68 98 64 154 C54 100 42 50 28 4 Z'/%3E%3Cpath fill='%23FB4F14' d='M56 6 L69 2 C86 48 96 100 92 158 C82 104 70 52 56 6 Z'/%3E%3Cpath fill='%23FB4F14' d='M86 14 L98 10 C112 52 120 100 116 148 C108 100 98 56 86 14 Z'/%3E%3C/svg%3E">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
+<style>
+/* Layout: a left-aligned poster. One column, max 1120px. The name is the hero at display scale,
+   an orange marquee of the idioms is the single loud moment, everything after is quiet editorial.
+   Palette: Cincinnati orange on black. Claw marks are the page's only ornament: one big slash
+   behind the name, a small one at the head of each section, and one as the marquee separator. */
+:root{
+  --ink:#000000;        /* page ground */
+  --ink-2:#141210;      /* raised surface */
+  --line:#2C2824;       /* rules */
+  --paper:#F4EFE6;      /* primary text */
+  --paper-dim:#BDB6AB;  /* secondary text */
+  --mist:#8A837A;       /* tertiary / captions */
+  --orange:#FB4F14;     /* the accent, and the band */
+  --orange-deep:#D13F0D;/* hover / shade */
+  --font-display:"Bricolage Grotesque", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-body:"Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--font-body);
+  font-size:1.0625rem;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(251,79,20,.4)}
+a:hover{border-bottom-color:var(--orange)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+::selection{background:var(--orange);color:var(--ink)}
+
+.wrap{
+  max-width:1120px;
+  margin:0 auto;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width:720px){
+  .wrap{padding-left:max(40px, env(safe-area-inset-left, 0px));padding-right:max(40px, env(safe-area-inset-right, 0px))}
+}
+
+/* ---------- claw glyph sizes ---------- */
+.claw-sm{width:.95em;height:1.25em;vertical-align:-.25em;margin-right:.55rem;color:var(--orange)}
+.claw-xs{width:.85em;height:1.1em;vertical-align:-.2em;margin:0 1.4rem 0 0;color:var(--ink);opacity:.8}
+.claw-hero{
+  position:absolute;right:-6%;top:-6%;
+  width:72%;aspect-ratio:120/160;
+  color:var(--orange);
+  transform:rotate(-14deg);
+  pointer-events:none;z-index:0;
+}
+.claw-ft{width:1.6rem;height:2.1rem;color:var(--orange);flex:none}
+
+/* ---------- top bar ---------- */
+.top{
+  display:flex;justify-content:flex-end;align-items:center;gap:1rem;
+  padding-block:1.1rem;
+  font-family:var(--font-display);font-size:.95rem;font-weight:600;
+}
+.top nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+.top nav a{color:var(--paper-dim);border:0}
+.top nav a:hover{color:var(--paper)}
+.top .mark{color:var(--orange);letter-spacing:.02em}
+
+/* ---------- hero ---------- */
+.hero{padding-block:1rem 0;display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+@media (min-width:860px){.hero{grid-template-columns:minmax(0,1fr) clamp(260px, 34%, 400px);gap:3rem}}
+.hero-text{min-width:0;padding-bottom:3rem}
+.portrait{position:relative;min-width:0;max-width:320px;justify-self:end;margin-bottom:2.5rem}
+@media (min-width:860px){.portrait{max-width:none;width:100%;margin-bottom:0}}
+.portrait img{
+  display:block;width:100%;height:auto;position:relative;z-index:1;
+  -webkit-mask-image:linear-gradient(to bottom, #000 72%, transparent 100%);
+  mask-image:linear-gradient(to bottom, #000 72%, transparent 100%);
+}
+.hero h1{
+  font-family:var(--font-display);
+  font-variation-settings:"opsz" 96,"wdth" 78;
+  font-weight:800;
+  font-size:clamp(3.4rem, 11vw, 9rem);
+  line-height:.86;
+  letter-spacing:-.03em;
+  margin:0 0 1.25rem;
+  text-wrap:balance;
+}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(0)}
+.hero .role{
+  font-family:var(--font-display);
+  font-size:clamp(1.05rem, 1.6vw, 1.3rem);
+  font-weight:500;
+  color:var(--paper-dim);
+  margin:0 0 1.75rem;
+}
+.hero .role b{color:var(--paper);font-weight:600}
+.build{
+  font-family:var(--font-display);
+  font-variation-settings:"opsz" 60,"wdth" 88;
+  font-weight:600;
+  font-size:clamp(1.6rem, 3.6vw, 2.9rem);
+  line-height:1.15;
+  margin:0 0 2.25rem;
+  max-width:24ch;
+  min-height:2.3em; /* always two lines, so nothing below it moves when the phrase changes */
+  text-wrap:pretty;
+}
+@media (max-width:479px){.build{min-height:3.45em}}
+.build .rot{color:var(--orange);transition:opacity .35s ease}
+.build .rot.out{opacity:0}
+.stickers{display:flex;flex-wrap:wrap;gap:.75rem 1rem;max-width:60ch}
+.sticker{
+  font-family:var(--font-display);font-weight:600;font-size:.92rem;
+  padding:.45rem .85rem;border:1.5px solid var(--orange);border-radius:999px;color:var(--orange);
+  white-space:nowrap;background:var(--ink);
+}
+
+/* ---------- marquee ---------- */
+.band{background:var(--orange);color:var(--ink);overflow:hidden;padding-block:.9rem}
+.band .track{display:flex;gap:0;width:max-content;animation:slide 48s linear infinite}
+.band .item{
+  font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:.005em;
+  white-space:nowrap;padding:0 1.6rem;display:inline-flex;align-items:center;
+}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .band .track{animation:none;width:auto;flex-wrap:wrap;row-gap:.4rem}
+  .band .track .copy{display:none}
+  .build .rot{transition:none}
+}
+
+/* ---------- sections ---------- */
+section{padding-block:4.5rem 1rem}
+@media (min-width:720px){section{padding-block:6rem 1.5rem}}
+.kicker{
+  font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--mist);
+  margin:0 0 1rem;display:flex;align-items:center;
+}
+h2{
+  font-family:var(--font-display);
+  font-variation-settings:"opsz" 72,"wdth" 85;
+  font-weight:700;
+  font-size:clamp(1.9rem, 4.2vw, 3.2rem);
+  line-height:1.05;letter-spacing:-.02em;
+  margin:0 0 1.5rem;max-width:22ch;text-wrap:balance;
+}
+p{margin:0 0 1.1rem;max-width:62ch}
+.lede{font-size:1.15rem;color:var(--paper)}
+.muted{color:var(--paper-dim)}
+
+.two{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media (min-width:860px){.two{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:4rem}}
+.two > *{min-width:0}
+.proof{list-style:none;margin:0;padding:0;display:grid;gap:0;align-content:start}
+.proof li{
+  padding:1rem 0;border-top:1px solid var(--line);
+  font-family:var(--font-display);font-weight:600;font-size:1.1rem;line-height:1.3;
+}
+.proof li:last-child{border-bottom:1px solid var(--line)}
+.proof small{display:block;font-family:var(--font-body);font-weight:400;color:var(--mist);font-size:.92rem;margin-top:.25rem}
+.aside{
+  margin-top:2rem;padding:1.1rem 1.25rem;background:var(--ink-2);border-left:3px solid var(--orange);
+  font-size:.98rem;color:var(--paper-dim);max-width:62ch;
+}
+.aside b{color:var(--paper)}
+
+/* thesis */
+.thesis{display:grid;gap:2rem;grid-template-columns:1fr}
+@media (min-width:860px){.thesis{grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem}}
+.thesis article{border-top:2px solid var(--orange);padding-top:1.1rem;min-width:0}
+.thesis h3{
+  font-family:var(--font-display);font-variation-settings:"opsz" 48,"wdth" 90;
+  font-weight:700;font-size:1.45rem;line-height:1.15;margin:0 0 .75rem;letter-spacing:-.01em;text-wrap:balance;
+}
+.thesis p{font-size:1rem;color:var(--paper-dim);margin:0}
+.posts{margin-top:3rem;max-width:62ch}
+.posts > p{font-family:var(--font-display);font-weight:600;font-size:1.05rem;margin:0 0 .5rem}
+.posts ul{list-style:none;margin:0;padding:0}
+.posts li{padding:.85rem 0;border-top:1px solid var(--line)}
+.posts li:last-child{border-bottom:1px solid var(--line)}
+.posts li a{font-family:var(--font-display);font-weight:700;font-size:1.1rem;border:0}
+.posts li a:hover{text-decoration:underline;text-underline-offset:.2em}
+.posts small{display:block;color:var(--mist);font-size:.92rem;margin-top:.2rem}
+
+/* timeline */
+.tl{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.tl li{
+  display:grid;grid-template-columns:1fr;gap:.5rem 2.5rem;
+  padding:1.75rem 0;border-top:1px solid var(--line);
+}
+.tl li:last-child{border-bottom:1px solid var(--line)}
+@media (min-width:720px){.tl li{grid-template-columns:11rem minmax(0,1fr)}}
+.tl .yr{
+  font-family:var(--font-display);font-variation-settings:"opsz" 96,"wdth" 78;
+  font-weight:800;font-size:2.4rem;line-height:1;color:var(--orange);letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;
+}
+.tl .co{font-family:var(--font-display);font-weight:700;font-size:1.35rem;margin:0 0 .15rem}
+.tl .ttl{color:var(--mist);margin:0 0 .75rem;font-size:.98rem}
+.tl p{font-size:1rem;color:var(--paper-dim);margin:0}
+.tl p + p{margin-top:.6rem}
+.tl li.cred{grid-template-columns:1fr}
+.tl li.cred p + p{margin-top:.25rem}
+
+/* builds */
+.builds{list-style:none;margin:0;padding:0}
+.builds li{
+  display:grid;grid-template-columns:1fr;gap:.35rem 2rem;
+  padding:1.1rem 0;border-top:1px solid var(--line);
+}
+.builds li:last-child{border-bottom:1px solid var(--line)}
+@media (min-width:720px){.builds li{grid-template-columns:14rem 11rem minmax(0,1fr)}}
+.builds .nm{font-family:var(--font-display);font-weight:700;font-size:1.15rem}
+.builds .stk{color:var(--mist);font-size:.95rem}
+.builds .what{color:var(--paper-dim);font-size:1rem}
+
+/* idioms */
+.idioms{display:grid;gap:0 3rem;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+@media (min-width:720px){
+  .idioms{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .idioms li:last-child{grid-column:1 / -1;border-bottom:1px solid var(--line)}
+}
+.idioms li{
+  font-family:var(--font-display);font-variation-settings:"opsz" 48,"wdth" 85;
+  font-weight:700;font-size:clamp(1.35rem, 2.4vw, 1.8rem);line-height:1.15;letter-spacing:-.01em;
+  padding:1.1rem 0;border-top:1px solid var(--line);min-width:0;
+}
+.idioms li small{display:block;font-family:var(--font-body);font-weight:400;font-size:.95rem;color:var(--mist);margin-top:.35rem;line-height:1.45}
+
+/* closing pair: off the clock + say hello */
+.pair{display:grid;grid-template-columns:1fr;gap:0 4rem}
+@media (min-width:860px){.pair{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pair > section{min-width:0}
+.pair h2{max-width:16ch}
+.contact{padding-block:4.5rem 2rem}
+@media (min-width:860px){.contact{padding-block:6rem 1.5rem}}
+.email{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem;margin:0 0 1.5rem;
+}
+.email code{
+  font-family:var(--font-display);font-weight:700;font-size:clamp(1.3rem, 2.6vw, 1.9rem);
+  color:var(--orange);user-select:all;word-break:break-all;
+}
+.copy{
+  font:inherit;font-family:var(--font-display);font-weight:600;font-size:.95rem;
+  background:transparent;color:var(--paper);border:1.5px solid var(--line);border-radius:999px;
+  padding:.45rem .95rem;cursor:pointer;
+}
+.copy:hover{border-color:var(--orange)}
+.links{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:var(--font-display);font-weight:600}
+footer{
+  padding-block:2rem 3rem;color:var(--mist);font-size:.92rem;border-top:1px solid var(--line);margin-top:2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+}
+footer p{margin:0;max-width:none}
+
+/* page-load: the name rises once, the big claw rakes in */
+@media (prefers-reduced-motion:no-preference){
+  .hero h1 span i{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+  .hero h1 span:nth-child(2) i{animation-delay:.12s}
+  .hero .role,.build,.stickers{animation:fade .8s ease both;animation-delay:.45s}
+  .build{animation-delay:.6s}.stickers{animation-delay:.75s}
+  .claw-hero{animation:rake .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:.25s}
+}
+@keyframes rise{from{transform:translateY(105%)}to{transform:translateY(0)}}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes rake{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="claw" viewBox="0 0 120 160">
+      <path fill="currentColor" d="M0 10 L13 4 C30 50 40 100 36 156 C26 104 14 54 0 10 Z"/>
+      <path fill="currentColor" d="M28 4 L41 0 C58 46 68 98 64 154 C54 100 42 50 28 4 Z"/>
+      <path fill="currentColor" d="M56 6 L69 2 C86 48 96 100 92 158 C82 104 70 52 56 6 Z"/>
+      <path fill="currentColor" d="M86 14 L98 10 C112 52 120 100 116 148 C108 100 98 56 86 14 Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <nav aria-label="Sections">
+      <a href="#now">Now</a>
+      <a href="#thinking">Thinking</a>
+      <a href="#record">Record</a>
+      <a href="#builds">Builds</a>
+      <a href="#hello">Hello</a>
+      <a href="Aaron_Sweemer_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-text">
+      <h1><span><i>Aaron</i></span><span><i>Sweemer</i></span></h1>
+      <p class="role"><b>VP of Cloud Services, Encore Technologies.</b> Cincinnati, Ohio.</p>
+      <p class="build">I build <span class="rot" id="rot">managed-service businesses</span></p>
+      <div class="stickers" aria-label="Highlights">
+        <span class="sticker">U.S. Patent 9,652,273</span>
+        <span class="sticker">Principal Engineer, VMware</span>
+        <span class="sticker">Ran a $200M ARR cloud portfolio</span>
+        <span class="sticker">Conference speaker, 14 years straight</span>
+      </div>
+    </div>
+    <div class="portrait">
+      <svg class="claw-hero" aria-hidden="true"><use href="#claw"/></svg>
+      <img src="headshot.png" alt="Aaron Sweemer" width="900" height="721">
+    </div>
+  </section>
+</div>
+
+<div class="band" aria-label="Sayings">
+  <div class="track" id="track">
+    <span class="item"><svg class="claw-xs" aria-hidden="true"><use href="#claw"/></svg>'A' players hire 'A+' players. And 'B' players hire 'C' players.</span>
+    <span class="item"><svg class="claw-xs" aria-hidden="true"><use href="#claw"/></svg>We thrive in the white space.</span>
+    <span class="item"><svg class="claw-xs" aria-hidden="true"><use href="#claw"/></svg>We don't read blueprints. We create them.</span>
+    <span class="item"><svg class="claw-xs" aria-hidden="true"><use href="#claw"/></svg>Build a team so strong no one knows who the boss is.</span>
+    <span class="item"><svg class="claw-xs" aria-hidden="true"><use href="#claw"/></svg>Never let perfect be the enemy of good.</span>
+    <span class="item"><svg class="claw-xs" aria-hidden="true"><use href="#claw"/></svg>First make it exist. Then make it pretty.</span>
+    <span class="item"><svg class="claw-xs" aria-hidden="true"><use href="#claw"/></svg>Fail well.</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section id="now">
+    <p class="kicker"><svg class="claw-sm" aria-hidden="true"><use href="#claw"/></svg>What I'm building now</p>
+    <div class="two">
+      <div>
+        <h2>Building a managed-services business from a standing start.</h2>
+        <p class="lede">In June 2024 I joined Encore Technologies, an MSP based in my beloved hometown. We own our own data centers, which is where I'm building our Infrastructure and Cloud Managed Services (ICMS) P&amp;L from the ground up.</p>
+        <p class="muted">When I got here, ICMS was one team of five, a short menu (backup, managed infrastructure, managed networks), and a OneNote notebook as the system of record. It ran on manual heroics. Two years in: a real service catalog (IaaS, backup, disaster recovery, managed monitoring, full infrastructure outsourcing), three engineering teams (Platform Engineering, Infrastructure Operations, Resolution Operations), a seven-figure-a-year outsourcing contract with a financial-services customer, and the biggest pipeline this P&amp;L has ever carried. Customers span healthcare, financial services, education, logistics, and local government.</p>
+        <p class="muted">The job now is machinery: the process, tooling, and teams that take this P&amp;L to escape velocity. Next on the list is managed AI infrastructure operations for enterprise customers.</p>
+        <p class="muted">I came up as an engineer and spent most of my career in pre-sales leadership, which means I'm happiest when I'm building the thing and the team at the same time. I'm not a natural operations manager. I'm a builder who learned to run what he built.</p>
+      </div>
+      <ul class="proof">
+        <li>Seven-figure infrastructure outsourcing deal<small>Full-stack, for a financial-services customer, signed in year two.</small></li>
+        <li>From a OneNote notebook to an operating model<small>Five people and manual heroics, rebuilt for scale.</small></li>
+        <li>A service catalog that didn't exist<small>IaaS, backup, disaster recovery, monitoring, full outsourcing. Defined and tiered, from real proposals.</small></li>
+        <li>Every engineer sends me one thing a week<small>A win, a fire, a shout-out, or a stuck. I read every one. Started it at VMware, runs at Encore.</small></li>
+        <li>Next: managed AI infrastructure operations<small>For enterprises that need someone accountable at 3 a.m.</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="thinking">
+    <p class="kicker"><svg class="claw-sm" aria-hidden="true"><use href="#claw"/></svg>What I think about</p>
+    <h2>The capability curve is near vertical. The judgment curve is flat.</h2>
+    <p class="lede">That gap is most of what I write about, and most of what I build a business around.</p>
+    <div class="thesis" style="margin-top:2.5rem">
+      <article>
+        <h3>The magic needs a magician.</h3>
+        <p>AI gets better fastest where the output can be scored. Nobody has a clean training signal for "should you have deleted that database." Capability compounds. Judgment doesn't, yet. The humans who know when the machine is wrong are the ones you keep.</p>
+      </article>
+      <article>
+        <h3>Refactor the driver out of the engine.</h3>
+        <p>Every system has a Driver and an Engine. The Engine is deterministic code that does the work safely, at scale, and never improvises. The Driver is the reasoning layer that reads intent and decides which engine to start, and when. For decades we built both into one box and called it automation. AI doesn't replace the Engine. It finally gives us a real Driver. The AI thinks. The code executes. Neither does the other's job.</p>
+      </article>
+      <article>
+        <h3>You can't fire an API.</h3>
+        <p>In managed services, accountability is the product. When the agent is wrong at 3 a.m., somebody with a name answers the phone. That's what customers are actually buying, and it's the part AI makes more valuable, not less.</p>
+      </article>
+    </div>
+    <div class="posts">
+      <p>I think about this a lot, and sometimes I write about it. Three posts, if you want the long version.</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/feed/update/urn:li:share:7458911882712809472/" target="_blank" rel="noopener">The Cloudflare layoffs, and what got cut with them</a><small>May 2026. Cutting the operators before the agents are wired in.</small></li>
+        <li><a href="https://www.linkedin.com/feed/update/urn:li:share:7427371975955615744/" target="_blank" rel="noopener">"Companies are burning their own furniture to stay warm."</a><small>February 2026.</small></li>
+        <li><a href="https://www.linkedin.com/feed/update/urn:li:share:7417556088088051712/" target="_blank" rel="noopener">"What I'm about to tell you is, well, terrifying."</a><small>January 2026.</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="record">
+    <p class="kicker"><svg class="claw-sm" aria-hidden="true"><use href="#claw"/></svg>Track record</p>
+    <h2>Twenty years of building teams that outgrew me.</h2>
+    <ul class="tl" style="margin-top:2.5rem">
+      <li>
+        <div class="yr">2024</div>
+        <div>
+          <p class="co">Encore Technologies</p>
+          <p class="ttl">VP of Cloud Services. Owner of the Infrastructure &amp; Cloud Managed Services P&amp;L.</p>
+          <p>The job described above. Still going.</p>
+        </div>
+      </li>
+      <li>
+        <div class="yr">2021</div>
+        <div>
+          <p class="co">Check Point Software Technologies</p>
+          <p class="ttl">Global Head of Cloud Customer Experience. Global Head of Cloud Security Architects.</p>
+          <p>Merged technical sales, operations, partnerships, and customer success into one cloud customer-experience organization: 150 people, 8 managers, 2,500 customers, a $200M ARR portfolio. Churn went from 30% to 10%. Technical win rate tripled. Launched a Cloud Security Center of Excellence with R&amp;D.</p>
+          <p>Before that, led 75 cloud security architects across AWS, Azure, and GCP, grew the top of the cloud funnel by half, and was promoted from Americas to global scope four months after joining.</p>
+        </div>
+      </li>
+      <li>
+        <div class="yr">2008</div>
+        <div>
+          <p class="co">VMware</p>
+          <p class="ttl">Sr. Systems Engineer to Principal Systems Engineer, then Director and Senior Director, pre-sales leadership.</p>
+          <p>Fourteen years. Three promotions on the technical ladder to Principal, VMware's Distinguished Engineer equivalent. Then leadership: built the cloud incubation function that took new offerings from idea to market, and later led the team positioning VMware inside AWS, Azure, and Google Cloud at 120% of target across 1,000+ customers.</p>
+        </div>
+      </li>
+      <li class="cred">
+        <div>
+          <p class="co">Credentials</p>
+          <p>U.S. Patent 9,652,273, on building hierarchies of virtual machine templates.</p>
+          <p>Spoke at every VMworld from 2008 to 2021.</p>
+          <p>President's Club, VMware, 2009, 2017, and 2019.</p>
+          <p>Technical Manager of the Year, VMware, 2018.</p>
+          <p>MBA, Technology Management, University of Phoenix.</p>
+          <p>BS, Computer Science, University of Maryland.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="builds">
+    <p class="kicker"><svg class="claw-sm" aria-hidden="true"><use href="#claw"/></svg>Nights and weekends</p>
+    <h2>A few fun side projects.</h2>
+    <p class="lede">I was DevOps before DevOps was a thing. I was a container evangelist... <em>at VMware</em>. And I was playing with machine learning before most could spell GPT. I'm naturally curious and I like to build things.</p>
+    <ul class="builds" style="margin-top:2.5rem">
+      <li>
+        <span class="nm">Sweemdog</span>
+        <span class="stk">Python, SQLite, Alpha Vantage</span>
+        <span class="what">A paper-trading options system running a wheel strategy, with a daily brief that tells me what it would have done and why.</span>
+      </li>
+      <li>
+        <span class="nm">Cash Flow</span>
+        <span class="stk">React, Firebase</span>
+        <span class="what">A day, week, and month calendar of every inflow and outflow in the household. My wife and I run the house on it from our phones.</span>
+      </li>
+      <li>
+        <span class="nm">Service catalog builder</span>
+        <span class="stk">HTML, JSON</span>
+        <span class="what">A twelve-section service-definition tool my team used to write Encore's managed-services catalog from real customer proposals.</span>
+      </li>
+      <li>
+        <span class="nm">The house</span>
+        <span class="stk">56 solar panels, 2 Powerwalls</span>
+        <span class="what">Not software, but it has an API, and I check it more than I should.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="idioms">
+    <p class="kicker"><svg class="claw-sm" aria-hidden="true"><use href="#claw"/></svg>Things my teams are tired of hearing me say</p>
+    <h2>Aaron's Idioms. Phrases I believe in my bones.</h2>
+    <ul class="idioms" style="margin-top:2rem">
+      <li>'A' players hire 'A+' players. And 'B' players hire 'C' players.</li>
+      <li>We thrive in the white space.<small>The interesting work is in the gaps between the org chart.</small></li>
+      <li>We don't read blueprints. We create them.</li>
+      <li>Build a team so strong no one knows who the boss is.</li>
+      <li>Never let perfect be the enemy of good.</li>
+      <li>First make it exist. Then make it pretty.</li>
+      <li>Fail well.<small>Mistakes will happen. Own it, learn from it, make it right.</small></li>
+    </ul>
+  </section>
+
+  <div class="pair">
+    <section id="offclock">
+      <p class="kicker"><svg class="claw-sm" aria-hidden="true"><use href="#claw"/></svg>Off the clock</p>
+      <h2>West Chester, Ohio.</h2>
+      <p class="muted">Husband. Dad of three. I love God and I love science. I spend most of my free time thinking about how each reveals more about the other. Golfing and camping and Bengals and fun side projects take up whatever time is left. That's me.</p>
+    </section>
+
+    <section id="hello" class="contact">
+      <p class="kicker"><svg class="claw-sm" aria-hidden="true"><use href="#claw"/></svg>Say hello</p>
+      <h2>The fastest way to reach me is email.</h2>
+      <div class="email">
+        <code id="em">asweemer@gmail.com</code>
+        <button class="copy" id="copyBtn" type="button">Copy</button>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/aaron-sweemer/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="Aaron_Sweemer_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>Aaron Sweemer. West Chester, Ohio. Built on a lazy, rainy Sunday afternoon. Which is the point.</p>
+    <svg class="claw-ft" aria-hidden="true"><use href="#claw"/></svg>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // Rotating object of "I build ___"
+  var words=["managed-service businesses","teams that outgrow their boss","the machinery behind a P&L","managed AI ops for the enterprise","things on nights and weekends"];
+  var el=document.getElementById('rot');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(el&&!reduce){
+    var i=0;
+    setInterval(function(){
+      el.classList.add('out');
+      setTimeout(function(){
+        i=(i+1)%words.length; el.textContent=words[i]; el.classList.remove('out');
+      },350);
+    },2600);
+  }
+
+  // Seamless marquee: duplicate the items once
+  var track=document.getElementById('track');
+  if(track){
+    var items=Array.prototype.slice.call(track.children);
+    items.forEach(function(n){var c=n.cloneNode(true);c.classList.add('copy');c.setAttribute('aria-hidden','true');track.appendChild(c);});
+  }
+
+  // Copy email
+  var btn=document.getElementById('copyBtn'), em=document.getElementById('em');
+  if(btn&&em){
+    btn.addEventListener('click',function(){
+      var txt=em.textContent;
+      function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy';},1600);}
+      function fallback(){
+        try{var r=document.createRange();r.selectNodeContents(em);var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected';setTimeout(function(){btn.textContent='Copy';},1600);}catch(e){}
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt).then(done).catch(fallback);
+      }else{fallback();}
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
