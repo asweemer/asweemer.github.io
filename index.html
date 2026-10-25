@@ -8,7 +8,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Aaron Sweemer">
 <meta property="og:description" content="Aaron Sweemer. VP of Cloud Services at Encore Technologies in Cincinnati. Builder, pre-sales leader, patent holder, Bengals fan.">
-<meta property="og:image" content="headshot.png">
+<meta property="og:image" content="https://asweemer.github.io/headshot.png">
+<meta property="og:url" content="https://asweemer.github.io/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 160'%3E%3Cpath fill='%23FB4F14' d='M0 10 L13 4 C30 50 40 100 36 156 C26 104 14 54 0 10 Z'/%3E%3Cpath fill='%23FB4F14' d='M28 4 L41 0 C58 46 68 98 64 154 C54 100 42 50 28 4 Z'/%3E%3Cpath fill='%23FB4F14' d='M56 6 L69 2 C86 48 96 100 92 158 C82 104 70 52 56 6 Z'/%3E%3Cpath fill='%23FB4F14' d='M86 14 L98 10 C112 52 120 100 116 148 C108 100 98 56 86 14 Z'/%3E%3C/svg%3E">
 <style>
@@ -110,12 +111,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
 .hero h1 span i{display:block;font-style:normal;transform:translateY(0)}
 .hero .role{
   font-family:var(--font-display);
-  font-size:clamp(1.05rem, 1.6vw, 1.3rem);
-  font-weight:500;
-  color:var(--paper-dim);
+  font-size:clamp(1.2rem, 2vw, 1.6rem);
+  font-weight:600;
+  color:var(--paper);
   margin:0 0 1.75rem;
 }
-.hero .role b{color:var(--paper);font-weight:600}
+.hero .role b{color:var(--paper);font-weight:700}
+.hero .role span{color:var(--paper-dim);font-weight:500}
 .build{
   font-family:var(--font-display);
   font-variation-settings:"opsz" 60,"wdth" 88;
@@ -132,10 +134,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
 .build .rot.out{opacity:0}
 .stickers{display:flex;flex-wrap:wrap;gap:.75rem 1rem;max-width:60ch}
 .sticker{
-  font-family:var(--font-display);font-weight:600;font-size:.92rem;
-  padding:.45rem .85rem;border:1.5px solid var(--orange);border-radius:999px;color:var(--orange);
+  font-family:var(--font-display);font-weight:700;font-size:1rem;
+  padding:.55rem 1rem;border:2px solid var(--orange);border-radius:999px;color:var(--orange);
   white-space:nowrap;background:var(--ink);
+  transition:background .2s ease,color .2s ease,transform .2s ease;
 }
+.sticker:hover{background:var(--orange);color:var(--ink);transform:translateY(-2px)}
 
 /* ---------- marquee ---------- */
 .band{background:var(--orange);color:var(--ink);overflow:hidden;padding-block:.9rem}
@@ -318,13 +322,14 @@ footer p{margin:0;max-width:none}
   <section class="hero" aria-label="Introduction">
     <div class="hero-text">
       <h1><span><i>Aaron</i></span><span><i>Sweemer</i></span></h1>
-      <p class="role"><b>VP of Cloud Services, Encore Technologies.</b> Cincinnati, Ohio.</p>
+      <p class="role"><b>VP of Cloud Services, Encore Technologies.</b> <span>Cincinnati, Ohio.</span></p>
       <p class="build">I build <span class="rot" id="rot">managed-service businesses</span></p>
       <div class="stickers" aria-label="Highlights">
         <span class="sticker">U.S. Patent 9,652,273</span>
-        <span class="sticker">Principal Engineer, VMware</span>
+        <span class="sticker">VP who still writes code</span>
         <span class="sticker">Ran a $200M ARR cloud portfolio</span>
         <span class="sticker">Conference speaker, 14 years straight</span>
+        <span class="sticker">Bengals fan, hence the orange</span>
       </div>
     </div>
     <div class="portrait">
